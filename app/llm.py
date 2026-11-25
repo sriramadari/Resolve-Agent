@@ -1,9 +1,5 @@
-from google import genai
 from google.genai import types
-
-from app.config import settings
-
-client = genai.Client(api_key=settings.gemini_api_key)
+from app.gemini_client import client
 
 SYSTEM_PROMPT = (
     "You are ResolveAgent, a helpful assistant for customers of a payments company. "
