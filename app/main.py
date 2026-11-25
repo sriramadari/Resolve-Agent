@@ -1,15 +1,26 @@
-from fastapi import FastAPI
+from fastapi import FastAPI,HTTPException
 from pydantic import BaseModel
+from app.llm import ask_llm
 
 app = FastAPI(title="ResolveAgent")
 
 class AskRequest(BaseModel):
     question:str
 
+class AskResponse(BaseModel):
+    answer: str
+    input_tokens: int
+    output_tokens: int
+
+
 @app.get("/health")
 def health(): 
     return {"status":"ok"}
 
-@app.post("/ask")
+@app.post("/ask",response_model=AskResponse)
 def ask(req: AskRequest):
-    return {"answer": f"You asked: {req.question}"}
+    try:
+        return ask_llm(req.question)
+    except Exception as e:
+        raise HTTPException(status_code=502, detail=f"LLM call failed: {e}")
+

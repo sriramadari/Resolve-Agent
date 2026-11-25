@@ -1,7 +1,7 @@
 [project]
 name = "resolve-agent"
 version = "0.1.0"
-description = "Add your description here"
+description = "AI agent that answers customer questions from docs and takes real actions, with evals, guardrails and tracing"
 readme = "README.md"
 authors = [
     { name = "sriramadari", email = "lakshmisriramadari1427@gmail.com" }
@@ -9,6 +9,8 @@ authors = [
 requires-python = ">=3.12"
 dependencies = [
     "fastapi>=0.165.0",
+    "google-genai>=3.6.1",
+    "pydantic-settings>=2.16.3",
     "uvicorn[standard]>=0.54.0",
 ]
 
