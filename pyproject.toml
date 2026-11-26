@@ -10,6 +10,7 @@ requires-python = ">=3.12"
 dependencies = [
     "fastapi>=0.165.0",
     "google-genai>=3.6.1",
+    "httpx>=0.28.1",
     "numpy>=2.5.5",
     "pydantic-settings>=2.16.3",
     "qdrant-client>=1.20.0",

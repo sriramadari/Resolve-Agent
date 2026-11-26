@@ -1,0 +1,20 @@
+# Refunds
+https://razorpay.com/docs/payments/refunds.md
+https://razorpay.com/docs/payments/refunds/normal.md
+https://razorpay.com/docs/payments/refunds/instant.md
+https://razorpay.com/docs/payments/refunds/batch.md
+https://razorpay.com/docs/payments/refunds/issue.md
+https://razorpay.com/docs/payments/refunds/refund-speed.md
+https://razorpay.com/docs/payments/refunds/errors.md
+https://razorpay.com/docs/payments/refunds/faqs.md
+https://razorpay.com/docs/payments/refunds/emi-pay-later.md
+https://razorpay.com/docs/payments/refunds/supported-payment-methods.md
+https://razorpay.com/docs/payments/customers/customer-refunds.md
+
+# Settlements and disputes
+https://razorpay.com/docs/payments/settlements.md
+https://razorpay.com/docs/payments/disputes.md
+
+# Developer side
+https://razorpay.com/docs/api/refunds.md
+https://razorpay.com/docs/webhooks/refunds.md

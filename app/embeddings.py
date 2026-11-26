@@ -22,5 +22,6 @@ def embed_query(question: str) -> list[float]:
     return _embed([f"task: question answering | query: {question}"])[0]
 
 
-def embed_documents(texts: list[str], title: str = "none") -> list[list[float]]:
-    return _embed([f"title: {title} | text: {t}" for t in texts])
+def embed_documents(texts: list[str], titles: list[str] | None = None) -> list[list[float]]:
+    titles = titles or ["none"] * len(texts)
+    return _embed([f"title: {title} | text: {text}" for title, text in zip(titles, texts)])

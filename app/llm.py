@@ -1,20 +1,20 @@
 from google.genai import types
+
+from app.config import settings
 from app.gemini_client import client
 
-SYSTEM_PROMPT = (
+DEFAULT_SYSTEM_PROMPT = (
     "You are ResolveAgent, a helpful assistant for customers of a payments company. "
     "Answer clearly in 3 to 5 sentences. "
     "If you are not sure about something, say so instead of guessing."
 )
 
 
-def ask_llm(question: str) -> dict:
+def generate(prompt: str, system_prompt: str = DEFAULT_SYSTEM_PROMPT) -> dict:
     response = client.models.generate_content(
         model=settings.llm_model,
-        contents=question,
-        config=types.GenerateContentConfig(
-            system_instruction=SYSTEM_PROMPT,
-        ),
+        contents=prompt,
+        config=types.GenerateContentConfig(system_instruction=system_prompt),
     )
 
     usage = response.usage_metadata

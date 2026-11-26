@@ -16,10 +16,11 @@ q = np.array(embed_query(query))
 docs = np.array(embed_documents(documents))
 
 print(f"One embedding has {len(q)} numbers. First five: {q[:5]}\n")
-print(f"One embedding has {len(docs)} numbers. First five: {docs[:5]}\n")
 
 
 scores = docs @ q
+
+print(scores)
 
 for score, text in sorted(zip(scores, documents), reverse=True):
     print(f"{score:.3f}  {text}")
